@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vendor_app_assignment/View/Components/ListItem.dart';
 
 class VendorTab extends StatelessWidget {
@@ -7,6 +8,11 @@ class VendorTab extends StatelessWidget {
    VendorTab({Key? key, this.index}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+
     List<Widget> vendorList = [
       ListItem(
           image: "assets/img_01.jpeg",
@@ -44,6 +50,22 @@ class VendorTab extends StatelessWidget {
           image: "assets/img_02.jpeg",
           title: "Apparel Promoters",
           subTitle: "Chittagong, Bangladesh"),
+      ListItem(
+          image: "assets/img_01.jpeg",
+          title: "Kolour Koncepts Intl.",
+          subTitle: "Bangalore, India"),
+      ListItem(
+          image: "assets/img_08.jpeg",
+          title: "Sara footwear Co. Ltd.",
+          subTitle: "Bangalore, India"),
+      ListItem(
+          image: "assets/img_02.jpeg",
+          title: "Marek",
+          subTitle: "Bangalore, India"),
+      ListItem(
+          image: "assets/img_06.jpeg",
+          title: "YJC China Co.",
+          subTitle: "Hong Kong, China"),
     ];
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
